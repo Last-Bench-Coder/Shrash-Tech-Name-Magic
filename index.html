@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shrash Tech - Name Magic</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="logo">
+                    <h1 class="logo__text">Shrash Tech</h1>
+                    <p class="logo__tagline">Name Magic</p>
+                </div>
+                <nav class="nav">
+                    <button class="nav__toggle" id="navToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul class="nav__list" id="navList">
+                        <li><a href="#name-meaning" class="nav__link">Name Meaning</a></li>
+                        <li><a href="#lucky-numbers" class="nav__link">Lucky Numbers</a></li>
+                        <li><a href="#compatibility" class="nav__link">Compatibility</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero__content">
+                <h1 class="hero__title">Discover the Magic in Your Name</h1>
+                <p class="hero__subtitle">Unlock the hidden meanings, lucky numbers, and compatibility insights through the power of numerology</p>
+                <div class="hero__modules">
+                    <div class="module-card" data-module="name-meaning">
+                        <div class="module-card__icon">✨</div>
+                        <h3>Name Meaning</h3>
+                        <p>Transform your name into meaningful words</p>
+                    </div>
+                    <div class="module-card" data-module="lucky-numbers">
+                        <div class="module-card__icon">🔢</div>
+                        <h3>Lucky Numbers</h3>
+                        <p>Calculate your personal lucky numbers</p>
+                    </div>
+                    <div class="module-card" data-module="compatibility">
+                        <div class="module-card__icon">💕</div>
+                        <h3>Compatibility</h3>
+                        <p>Check relationship compatibility</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Module 1: Name Meaning -->
+    <section id="name-meaning" class="module">
+        <div class="container">
+            <div class="module__header">
+                <h2>Name Meaning Creator</h2>
+                <p>Enter your name to discover the meaningful sentence hidden within</p>
+            </div>
+            <div class="module__content">
+                <div class="input-section">
+                    <div class="form-group">
+                        <label for="nameInput" class="form-label">Enter Your Name</label>
+                        <input type="text" id="nameInput" class="form-control" placeholder="e.g., CHAKRAPANI" maxlength="20">
+                    </div>
+                    <button id="generateMeaning" class="btn btn--primary">Generate Meaning</button>
+                </div>
+                <div class="results-section" id="nameResults" style="display: none;">
+                    <div class="character-breakdown" id="characterBreakdown"></div>
+                    <div class="final-meaning" id="finalMeaning"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Module 2: Lucky Numbers -->
+    <section id="lucky-numbers" class="module">
+        <div class="container">
+            <div class="module__header">
+                <h2>Lucky Number Calculator</h2>
+                <p>Calculate your unique lucky number and discover your mystical attributes</p>
+            </div>
+            <div class="module__content">
+                <div class="input-section">
+                    <div class="input-row">
+                        <div class="form-group">
+                            <label for="luckyNameInput" class="form-label">Full Name</label>
+                            <input type="text" id="luckyNameInput" class="form-control" placeholder="e.g., CHAKRAPANI">
+                        </div>
+                        <div class="form-group">
+                            <label for="dobInput" class="form-label">Date of Birth (DD-MM-YYYY)</label>
+                            <input type="text" id="dobInput" class="form-control" placeholder="e.g., 24-02-1985" pattern="\d{2}-\d{2}-\d{4}">
+                        </div>
+                    </div>
+                    <button id="calculateLucky" class="btn btn--primary">Calculate Lucky Number</button>
+                </div>
+                <div class="results-section" id="luckyResults" style="display: none;">
+                    <div class="calculation-steps" id="calculationSteps"></div>
+                    <div class="lucky-attributes" id="luckyAttributes"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Module 3: Compatibility -->
+    <section id="compatibility" class="module">
+        <div class="container">
+            <div class="module__header">
+                <h2>Compatibility Checker</h2>
+                <p>Discover how compatible you are with your partner through numerology</p>
+            </div>
+            <div class="module__content">
+                <div class="input-section">
+                    <div class="compatibility-inputs">
+                        <div class="person-input">
+                            <h4>Person 1</h4>
+                            <div class="form-group">
+                                <label for="person1Name" class="form-label">Name</label>
+                                <input type="text" id="person1Name" class="form-control" placeholder="Enter first person's name">
+                            </div>
+                            <div class="form-group">
+                                <label for="person1Dob" class="form-label">Date of Birth (DD-MM-YYYY)</label>
+                                <input type="text" id="person1Dob" class="form-control" placeholder="e.g., 24-02-1985" pattern="\d{2}-\d{2}-\d{4}">
+                            </div>
+                        </div>
+                        <div class="person-input">
+                            <h4>Person 2</h4>
+                            <div class="form-group">
+                                <label for="person2Name" class="form-label">Name</label>
+                                <input type="text" id="person2Name" class="form-control" placeholder="Enter second person's name">
+                            </div>
+                            <div class="form-group">
+                                <label for="person2Dob" class="form-label">Date of Birth (DD-MM-YYYY)</label>
+                                <input type="text" id="person2Dob" class="form-control" placeholder="e.g., 15-08-1990" pattern="\d{2}-\d{2}-\d{4}">
+                            </div>
+                        </div>
+                    </div>
+                    <button id="checkCompatibility" class="btn btn--primary">Check Compatibility</button>
+                </div>
+                <div class="results-section" id="compatibilityResults" style="display: none;">
+                    <div class="compatibility-meter" id="compatibilityMeter"></div>
+                    <div class="compatibility-analysis" id="compatibilityAnalysis"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Shrash Tech - Name Magic. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Loading Modal -->
+    <div class="modal hidden" id="loadingModal">
+        <div class="modal__backdrop">
+            <div class="modal__content">
+                <div class="loading-spinner"></div>
+                <p>Calculating...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
